@@ -2,40 +2,75 @@
 @section('title')
  صفحه اصلی
 @endsection
-
 @section('advCin')
-  <div id="cinemas">
-      <div class="current">
-          <img src="<?= Url('img/cinema/1.jpg')?>" alt="تبلیغ سینما" height="300px" width="100%" class="gallery"/>
-      </div>
-      <div>
-          <img src="<?= Url('img/cinema/2.jpg')?>" alt="تبلیغ سینما" height="300px" width="100%" class="gallery"/>
-      </div>
-      <div>
-          <img src="<?= Url('img/cinema/3.jpg')?>" alt="تبلیغ سینما" height="300px" width="100%" class="gallery"/>
-      </div>      
-  </div>
+    @include('advCin')
 @endsection
 @section('content')
 
-@include('userPanel')    
+<div class="row">
+    
+    <a href="<?=Url('Films/top100')?>" target="_blank">
+        <div style="background-image: url('../img/film.png'); width:280px; height:280px;" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-2 myBox img-circle">
+        بهترین فیلم های ایرانی
+        </div>
+    </a>
+    
+    <a href="<?=Url('Seris/top100')?>" target="_blank">
+        <div style="background-image: url('../img/seri.png'); width:280px; height:280px;" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-md-offset-1 col-sm-offset-2 col-xs-offset-2 myBox img-circle">
+بهترین سریال های ایرانی       
+        </div>
+    </a>
+    <a href="<?=Url('Anims/top100')?>" target="_blank">    
+        <div style="background-image: url('../img/anim.png'); width:280px; height:280px;" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-2 myBox img-circle">
+بهترین انیمیشن های ایرانی         
+        </div>
+    </a>
+    <a href="<?=Url('Wris/top100')?>" target="_blank">
+        <div style="background-image: url('../img/wri.png'); width:280px; height:280px;" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-md-offset-1 col-sm-offset-2 col-xs-offset-2 myBox img-circle">
+        بهترین نویسنده های ایرانی
+        </div> 
+    </a>
 
-@endsection
-@section('js')
-        <script type="text/javascript">
-            $(function(){
-                setInterval("rotateImages()",3000);
-            });
-            function rotateImages(){
-                var oCurPhoto= $('#cinemas div.current');
-                var oNxtPhoto= oCurPhoto.next();
-                if(oNxtPhoto.length==0)
-                    oNxtPhoto=$('#cinemas div:first');
-                oCurPhoto.removeClass('current').addClass('previous');
-                oNxtPhoto.css({opacity: 0.0}).addClass('current').animate({opacity:1.0},1000,
-                        function(){
-                            oCurPhoto.removeClass('previous');
-                        });
-            }
-        </script>
+    <a href="<?=Url('Dirs/top100')?>" target="_blank">
+        <div style="background-image: url('../img/dir.jpg'); width:280px; height:280px;" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-2 myBox img-circle">
+        بهترین کارگردان های ایرانی
+        </div>                
+    </a>
+
+    <a href="<?=Url('Arts/top100')?>" target="_blank">
+        <div style="background-image: url('../img/art.png'); width:280px; height:280px;" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-md-offset-1 col-sm-offset-2 col-xs-offset-2 myBox img-circle">
+        بهترین بازیگر های ایرانی
+        </div>
+    </a>
+
+</div>
+
+<br/><br/><br/><br/>
+
+<div class="row">
+    <h2><a href="<?= Url('news/all')?>">
+    جدیدترین اخبار سینمای ایران
+    </a></h2>
+
+    @foreach($news as $news)
+    <div class="col-md-10 col-sm-10 col-xs-10 col-xs-offset-1 img-thumbnail" id="news">
+        <h3 id="righter">
+            <a href="<?= Url('news/'.$news->id)?>">
+                {{$news->title}}
+            </a>
+        </h3>
+        <p style="overflow: hidden;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 3;
+                  -webkit-box-orient: vertical;
+                  height:130px;">
+        {{$news->body}}
+        </p>
+        <a class="btn btn-info" href="<?= Url('news/'.$news->id)?>">
+            ادامه خبر...
+        </a>
+    </div>
+    @endforeach
+
+</div>
 @endsection

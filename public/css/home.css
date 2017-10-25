@@ -4,6 +4,7 @@ body{
     padding: 0;
     font-family: palatino;
 }
+
 .main{
     border-top: solid 10px;
     border-top-color:paleturquoise;
@@ -13,11 +14,13 @@ body{
 }
 div.content{
     font-family: palatino;
-    padding-top: 10px;
-    margin: 0;
-    width: 100%;
     text-align: center;
-    clear: both;
+    background-color: white;
+    border: 2px ridge #d09ffe;
+    border-radius: 0 20px 0 20px;
+    margin: 25px;
+    padding-bottom: 45px;
+
 }
 #cinemas{
     height: 300px;
@@ -27,92 +30,90 @@ div.content{
     margin-left: 0px;
     margin-right: 0px;
 }
-#cinemas div{
-    position: absolute;
-    z-index: 0;
-}
-#cinemas div.previous{
-    z-index: 1;
-}
-#cinemas div.current{
-    z-index: 2;
-}
-.Box{
-    font-weight: bolder;
+
+
+
+.myBox{
+    padding-top: 100px;
+    margin-top: 45px;
+    margin-bottom: 25px;
+    opacity: 0.9;
+    background-color: white;
+    border: #3a0c54 solid 2px;  
     font-size: 28px;
     color: white;
     text-shadow: 0 0 2px #FF0000, 0 0 3px #0000FF;
+    font-weight: bold;
 }
-.myBox{
-    color: black;
-    padding-top: 100px;
-    margin-bottom: 25px;
-    margin-top: 25px;
+
+#news{
+    margin-top: 45px;
     opacity: 0.9;
-    background-color: #d9bcea;
-}
-.about{
     color: black;
-    padding-top: 100px;
-    margin-bottom: 50px;
-    opacity: 0.9;
-    background-color: white;
-    border: #3a0c54 solid 3px;   
 }
-.about2{
-    color: black;
-    padding-top: 100px;
-    margin-bottom: 50px;
-    opacity: 0.9;
-    background-color: white;
-    border: #3a0c54 solid 3px;   
-    position: relative;
-}
-ul.menu li{
-    direction: rtl;
-}
-.dropdown-menu {
-    background: transparent;
-}
-ul{
-    list-style-type: none;
-}
-#righter{
-    direction: rtl;
-    text-align: right;
-}
-#centerer{
+
+
+ul.menu li{ direction: rtl; }
+.dropdown-menu { background: transparent;}
+ul{ list-style-type: none; }
+
+#righter{ direction: rtl; text-align: right; }
+#centerer{ text-align: center; direction: rtl;}
+
+#cinema-title{
+    font-size: 26px;
     text-align: center;
+    font-family: palatino;
+    text-decoration: none;
+    color: white;
+}
+#cinema-caption{
+    font-size: 20px;
+    text-align: center;
+    background-color: #481e5c;
     direction: rtl;
+    font-family: palatino;
+    text-decoration: black;
+    opacity: 0.8;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 20px;
 }
 .xmenu{
     position: absolute;
-    padding-top: 10px;    
+    padding-top: 10px; 
+    margin-right: 0;
 }
 
+.login-menu{
+    font-size: 20px;
+    direction: rtl;
+    font-family: palatino;
+    text-decoration: black;
+}
 #title{
     border-bottom: #d9bcea ridge;
     font-family: palatino;
     font-weight: bold;
     font-size: 50px;
     background: url(../1.png) no-repeat;
-    direction: rtl;
-    text-align: right;
-    margin: 0px;
-    padding-top: 45px;
-    margin-top: 20px;
-    height: 280px;
+    padding-top: 0px;
+    height: 240px;
     width: 100%;
-    text-shadow: 0 0 2px #FF0000, 0 0 3px #0000FF;
-    padding-right: 270px;
-
-
+    padding-right: 240px;
 }
+#bottom-title{margin-bottom: 10px; opacity: 0.8;}
+
+
+#title-menu{
+    background-color: #d09ffe;
+    border-radius: 5px;
+    width: 120px;}
 .menu{
     direction: rtl;
     font-family: palatino;
     text-decoration: black;
-    font-size: 15px;
+    font-size: 18px;
     opacity: 0.9;
     color: white;
 
@@ -125,7 +126,7 @@ p.menu{
     background-color: #481e5c;
 }
 footer.menu{
-padding-top: 10px;
+    padding-top: 10px;
     font-size: 20px;
     text-shadow: 0 0 1px #000000, 0 0 1px #000000;
     background-color: #481e5c;
@@ -157,30 +158,50 @@ padding-top: 10px;
 }
 p{
     text-align: right;
-    padding-right: 25px;
+    padding: 5px 25px;
+    text-justify: auto;
     font-size: 18px;
 }
+h1{padding-right: 20px;}
+
 /********************************************************************/
-a:active{
-	text-decoration: none;
-        color: black;
+a:active{ text-decoration: none; color: black; }
+a:link{ text-decoration: none; color: black;}
+a:visited{ text-decoration: none; color: black; }
+a:hover{ text-decoration: none; color: black }
+@font-face{font-family: 'palatino'; src: url('../fonts/BRoya.woff') format('woff');}
+
+.slid {
+    /* The name of the animation */
+    animation-name: slide;
+    -webkit-animation-name: slide; 
+    /* The duration of the animation */
+    animation-duration: 2s; 
+    -webkit-animation-duration: 2s;
+    /* Make the element visible */
+    visibility: visible; 
 }
-a:hover{
-	text-decoration: none;
-        color: black;
+
+/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+@keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    } 
 }
-a:link{
-	text-decoration: none;
-        color: black;
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
 }
-a:visited{
-	text-decoration: none;
-        color: black;
-}
-@font-face{
-    font-family: 'palatino';
-    src:
-    url('fonts/Palatino-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+
+/*************************star rating********************/

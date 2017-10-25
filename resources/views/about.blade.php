@@ -2,10 +2,9 @@
 @section('title')
  درباره پافی
 @endsection
-@section('content')
-
-<div class="content container img-thumbnail" style="background-color: #f6f0fa;">   
-    <h1 id="righter">درباره پافی</h1>
+@section('content')  
+    <div class="row">
+        <h1 id="righter">درباره پافی</h1>
         <p> 
                 در پافی به دنبال دانلود فیلم نباشید.
                 قراره اینجا با هم یه رتبه بندی خوب از هر چیزی که مربوط به سینما میشه ارائه بدیم.
@@ -14,40 +13,33 @@
                  پس به علایق خودتون رای بدید و از امکانات پافی لذت ببرید و سینماهای خوب شهرتون رو پیدا کنید و بهش رای بدید.
         </p>
         <div class="row">
-            <div class="col-12 col-md-offset-3  col-xs-offset-2"  style="margin-left: 60px;">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
                 <a href="" target="_blank">       
-                    <div style="background-image: url('../img/facebook.png'); width:280px; height:280px;"  class="img-circle col-md-10 col-xs-8 col-xs-offset-1 about">
-                        <span class="Box">فیس بوک پافی</span>
-                    </div>
+                    <img alt="پافی در فیس بوک" title="پافی در فیس بوک" height="105px" width="105px" src="<?=Url('/img/facebook.png') ?>" class="img-circle"/>
                 </a>
-
-                <a href="https://t.me/pafi_ir" target="_blank">
-                    <div style="background-image: url('../img/Telegram.svg.png'); width:280px; height:280px;"  class="img-circle col-md-10 col-xs-8  col-xs-offset-1 about">
-                        <span class="Box">تلگرام پافی</span>
-                    </div>         
-                </a>
-                <div class="col-sm-offset-3">
-                <a href="https://www.instagram.com/pafi.ir/" target="_blank">
-                    <div style="background-image: url('../img/instagram.png'); width:280px; height:280px;"  class="img-circle col-md-10 col-xs-8 col-xs-offset-1 about">
-                        <span class="Box">اینستاگرام پافی</span>
-                    </div>
-                </a>
-                </div>
             </div>
-            <br/>
-            <div class="col-md-10 col-xs-8 col-md-offset-3 col-sm-12 col-sm-offset-2 col-xs-offset-2">
-                <a href="" target="_blank">
-                    <div style="background-image: url('../img/twitter.png'); width:280px; height:280px;"  class="img-circle col-md-4 col-xs-8  about2">
-                        <span class="Box">توییتر پافی</span>
-                    </div> 
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+                <a href="" target="_blank">       
+                    <img alt="پافی در تلگرام" title="پافی در تلگرام" height="105px" width="105px" src="<?=Url('/img/Telegram.svg.png') ?>" class="img-circle"/>
                 </a>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+                <a href="" target="_blank">       
+                    <img alt="پافی در توییتر" title="پافی در توییتر" height="105px" width="105px" src="<?=Url('/img/twitter.png') ?>" class="img-circle"/>
+                </a>
+            </div>
 
-                <a href="" target="_blank">
-                    <div style="background-image: url('../img/linkedIn.png'); width:280px; height:280px; "  class="img-circle col-md-4  col-sm-offset-1 col-xs-8 about2">
-                        <span class="Box">لینکدین پافی</span>
-                    </div>         
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                <a href="" target="_blank">       
+                    <img alt="پافی در اینستاگرام" title="پافی در اینستاگرام" height="105px" width="105px" src="<?=Url('/img/instagram.png') ?>" class="img-circle"/>
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                <a href="" target="_blank">       
+                    <img alt="پافی در لینکدین" title="پافی در لینکدین" height="105px" width="105px" src="<?=Url('/img/linkedIn.png') ?>" class="img-circle"/>
                 </a>
             </div>
         </div>
-</div>
+    </div>
+
 @endsection
