@@ -42,6 +42,8 @@
                          @endif
                 </form>
             </div>
+            <br/>
+            <img src="<?= Url('img/wri/'.$wris->img) ?>" alt="{{$wris->nameWri}}" height="400px" width="300px" style="border-radius: 10px;border: 2px solid #481e5c;" />
             <hr/>
             <p>
                 فیلم ها:

@@ -67,7 +67,7 @@ class ArtsController extends Controller
     }
     
     public function info($idArt){
-        $arts=DB::select('select nameArt,idArt,avg,count,dateBirth,placeBirth,comment from Arts where idArt=?',[$idArt]);
+        $arts=DB::select('select nameArt,img,idArt,avg,count,dateBirth,placeBirth,comment from Arts where idArt=?',[$idArt]);
         $films=DB::select('select titleFilm,Films.idFilm from Arts,Films,artsfilms where Arts.idArt=artsfilms.idArt and Films.idFilm=artsfilms.idFilm and Arts.idArt=?',[$idArt]);
         $seris=DB::select('select titleSeri,Seris.idSeri from Arts,Seris,artsseris where Arts.idArt=artsseris.idArt and Seris.idSeri=artsseris.idSeri and Arts.idArt=?',[$idArt]);
         $idUser=Auth::id();//here

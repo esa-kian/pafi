@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class FilmsModel extends Model
 {
 	protected $table='Films';
-	protected $fillable=['idFilm','titleFilm','idDir','idWri','idArt','idCin','avg','count','year','comment','Genre'];
+	protected $fillable=['idFilm','titleFilm', 'img' ,'idDir','idWri','idArt','idCin','avg','count','year','comment','Genre'];
         
         function arts(){
             return $this->belongsToMany('App\ArtsModel','idFilm');

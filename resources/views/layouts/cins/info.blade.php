@@ -42,7 +42,9 @@
                      @endif 
                 </form>
             </div>
-            <hr>
+            <br/>
+            <img src="<?= Url('img/cin/'.$cins->img) ?>" alt="{{$cins->nameCin}}" height="300px" width="600px" style="border-radius: 10px;border: 2px solid #481e5c;" />
+            <hr/>
             <p>
             فیلم ها:
             @foreach($films as $films)

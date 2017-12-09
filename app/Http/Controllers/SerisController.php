@@ -69,7 +69,7 @@ class SerisController extends Controller
     	return view('layouts.seris.alpha',compact('seris'));
     }
     public function info($idSeri){
-        $seris=DB::select('select titleSeri,idSeri,avg,count,year,comment,Genre from Seris where idSeri=?',[$idSeri]);
+        $seris=DB::select('select titleSeri,img,idSeri,avg,count,year,comment,Genre from Seris where idSeri=?',[$idSeri]);
         $arts=DB::select('select nameArt,Arts.idArt from Arts,artsseris,Seris where Arts.idArt=artsseris.idArt and Seris.idSeri=artsseris.idSeri and Seris.idSeri=?',[$idSeri]);
         $wris=DB::select('select nameWri,Wris.idWri from Wris,wrisseris,Seris where Wris.idWri=wrisseris.idWri and Seris.idSeri=wrisseris.idSeri and Seris.idSeri=?',[$idSeri]);
         $dirs=DB::select('select nameDir,Dirs.idDir from Dirs,dirsseris,Seris where Dirs.idDir=dirsseris.idDir and Seris.idSeri=dirsseris.idSeri and Seris.idSeri=?',[$idSeri]);

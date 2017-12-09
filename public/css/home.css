@@ -81,7 +81,7 @@ ul{ list-style-type: none; }
 }
 .xmenu{
     position: absolute;
-    padding-top: 10px; 
+    padding-top: 5px; 
     margin-right: 0;
 }
 
@@ -98,7 +98,7 @@ ul{ list-style-type: none; }
     font-size: 50px;
     background: url(../1.png) no-repeat;
     padding-top: 0px;
-    height: 240px;
+    height: 249px;
     width: 100%;
     padding-right: 240px;
 }

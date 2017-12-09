@@ -67,7 +67,7 @@ class DirsController extends Controller
     }
     
     public function info($idDir){
-        $dirs=DB::select('select nameDir,idDir,avg,count,dateBirth,placeBirth,comment from Dirs where idDir=?',[$idDir]);
+        $dirs=DB::select('select nameDir,img,idDir,avg,count,dateBirth,placeBirth,comment from Dirs where idDir=?',[$idDir]);
         $films=DB::select('select titleFilm,Films.idFilm from Dirs,Films,dirsfilms where Dirs.idDir=dirsfilms.idDir and Films.idFilm=dirsfilms.idFilm and Dirs.idDir=?',[$idDir]);
         $seris=DB::select('select titleSeri,Seris.idSeri from Dirs,Seris,dirsseris where Dirs.idDir=dirsseris.idDir and Seris.idSeri=dirsseris.idSeri and Dirs.idDir=?',[$idDir]);
         $idUser=Auth::id();//here

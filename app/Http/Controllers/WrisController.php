@@ -67,7 +67,7 @@ class WrisController extends Controller
     }
     
     public function info($idWri){
-        $wris=DB::select('select nameWri,idWri,avg,count,dateBirth,placeBirth,comment from Wris where idWri=?',[$idWri]);
+        $wris=DB::select('select nameWri,img,idWri,avg,count,dateBirth,placeBirth,comment from Wris where idWri=?',[$idWri]);
         $films=DB::select('select titleFilm,Films.idFilm from Wris,Films,wrisfilms where Wris.idWri=wrisfilms.idWri and Films.idFilm=wrisfilms.idFilm and Wris.idWri=?',[$idWri]);
         $seris=DB::select('select titleSeri,Seris.idSeri from Wris,Seris,wrisseris where Wris.idWri=wrisseris.idWri and Seris.idSeri=wrisseris.idSeri and Wris.idWri=?',[$idWri]);
         $idUser=Auth::id();

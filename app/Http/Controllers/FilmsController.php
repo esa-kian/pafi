@@ -79,7 +79,7 @@ class FilmsController extends Controller
     //ManyToMany Relationship in info page
     public function info($idFilm){    
 
-        $films=DB::select('select titleFilm,idFilm,avg,count,year,comment,Genre from Films  where idFilm=?',[$idFilm]);
+        $films=DB::select('select titleFilm,img,idFilm,avg,count,year,comment,Genre from Films  where idFilm=?',[$idFilm]);
         $arts= DB::select('select nameArt,Arts.idArt from Arts ,artsfilms,Films where Films.idFilm=artsfilms.idFilm and Arts.idArt=artsfilms.idArt and Films.idFilm=?',[$idFilm]);
         $wris= DB::select('select nameWri,Wris.idWri from Wris ,wrisfilms,Films where Films.idFilm=wrisfilms.idFilm and Wris.idWri=wrisfilms.idWri and Films.idFilm=?',[$idFilm]);
         $dirs= DB::select('select nameDir,Dirs.idDir from Dirs ,dirsfilms,Films where Films.idFilm=dirsfilms.idFilm and Dirs.idDir=dirsfilms.idDir and Films.idFilm=?',[$idFilm]); 

@@ -42,6 +42,8 @@
                      @endif
                 </form>  
             </div>
+            <br/>
+            <img src="<?= Url('img/dir/'.$dirs->img) ?>" alt="{{$dirs->nameDir}}" height="400px" width="300px" style="border-radius: 10px;border: 2px solid #481e5c;" />
             <hr/>
             <p>
                 فیلم ها:

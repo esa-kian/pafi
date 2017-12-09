@@ -11,8 +11,10 @@
             @foreach($films as $films)
             <h2>عنوان فیلم: <b> {{$films->titleFilm}} </b></h2>
                <?php //فرم ارسال اطلاعات برای ثبت رای ?>
+
             <div>
-                <form method="GET" class="content" action="<?= Url('Films/'.$films->idFilm.'/info') ?>">
+
+                <form class="content">
                      @if (Auth::guest())
 
                     <a href="#" data-toggle="modal" data-target="#myModal">
@@ -44,6 +46,8 @@
                      @endif   
                 </form>
             </div>
+            <br/>
+            <img src="<?= Url('img/film/'.$films->img) ?>" alt="{{$films->titleFilm}}" height="400px" width="300px" style="border-radius: 10px;border: 2px solid #481e5c;" />
             <hr>
             <p>
                 نام کارگردان: 
@@ -70,10 +74,10 @@
                 @endforeach
             </p>
             <p>
-                <span class="btn btn-danger">  امتیاز: {{$films->avg}}</span>
+                <span  id="vote" class="btn btn-danger">  امتیاز: {{$films->avg}}</span>
             </p>
             <p>
-                <span class="btn btn-danger"> تعداد آرا: {{$films->count}}</span>
+                <span  id="vote" class="btn btn-danger"> تعداد آرا: {{$films->count}}</span>
             </p>
             <p>
                 سال تولید: {{$films->year}} &numsp;
@@ -87,4 +91,19 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('js')
+    <script type="text/javascript">
+    var datastring= 'avg='+ avg + '&idFilm='+ idFilm;
+    $.ajax({
+        type: "GET",
+        url: "<?= Url('Films/'.$films->idFilm.'/info') ?>",
+        data: datastring
+    });
+    request.done(function(data){
+        alert(data);
+    });
+
+    </script>
 @endsection

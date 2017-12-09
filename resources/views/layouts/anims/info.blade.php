@@ -42,6 +42,8 @@
                      @endif  
                 </form>
             </div>
+            <br/>
+            <img src="<?= Url('img/anim/'.$anims->img) ?>" alt="{{$anims->titleAnim}}" height="400px" width="300px" style="border-radius: 10px;border: 2px solid #481e5c;" />
                         <hr/>
                         <p>
                             نام کارگردان:{{$anims->nameDir}}

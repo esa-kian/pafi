@@ -68,7 +68,7 @@ class CinsController extends Controller
         return view('layouts.cins.alpha',compact('cins'));
     }
     public function info($idCin){
-        $cins= DB::select('select nameCin,idCin,avg,count,year,address from Cins where idCin=?',[$idCin]);
+        $cins= DB::select('select nameCin,idCin,img,avg,count,year,address from Cins where idCin=?',[$idCin]);
         $films=DB::select('select titleFilm,Films.idFilm from Cins,Films,cinsfilms where Cins.idCin=cinsfilms.idcin and Films.idFilm=cinsfilms.idFilm and Cins.idCin=?',[$idCin]);
         $idUser=Auth::id();//here
 
